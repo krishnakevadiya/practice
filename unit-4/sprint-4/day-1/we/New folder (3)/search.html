@@ -1,0 +1,66 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0%;
+    }
+    #movies {
+      display: inline-grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      /* width: 30%; */
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 5%;
+    }
+    #movies div {
+      display: grid;
+      margin-bottom: 10%;
+      justify-items: center;
+    }
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 2%;
+      background: linear-gradient(to bottom, #192133, #111826);
+      color: white;
+    }
+    #lhs {
+      flex: 4;
+      display: flex;
+      align-items: center;
+    }
+    #lhs h4 {
+      margin-left: 4%;
+    }
+    #rhs {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div id="navbar">
+    
+    </div>
+    <form>
+      <div class="dropdown">
+       <input class="dropbtn" type="text" placeholder="serch here" id="ms" >
+       <div class="search"></div>
+       </div>
+    </form>
+    <button onclick="serchmovies()">Sbmit </button>
+    
+    <div id="container"></div>
+
+    
+  </body>
+</html>
+<script type="module" src="search.js"></script>

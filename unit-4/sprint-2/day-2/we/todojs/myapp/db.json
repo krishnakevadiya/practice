@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": "1665766456454.0708dadad",
+      "title": "dadakmc",
+      "status": false
+    },
+    {
+      "id": "1665766701993.0696addd",
+      "title": "adddm xckmzx",
+      "status": false
+    },
+    {
+      "id": "1665766703897.7285asfasf",
+      "title": "asfasfkmck,",
+      "status": false
+    },
+    {
+      "id": "1665766907555.6252fgsdfgsdfg",
+      "title": "fgsdfgsdfg",
+      "status": false
+    },
+    {
+      "id": "1665766909506.676sdfsdfesdf",
+      "title": "sdfsdfesdssdsf",
+      "status": false
+    },
+    {
+      "id": "1665766912931.021sdgrterhbb",
+      "title": "sdgrterhbbsss",
+      "status": false
+    },
+    {
+      "id": "1665767443961.356narshi mehta",
+      "title": "nar mhk,x,lzx",
+      "status": false
+    },
+    {
+      "id": "1665813446640.502asdasdasd",
+      "title": "asdasdasd",
+      "status": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

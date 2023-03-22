@@ -1,0 +1,5 @@
+what is the difference between Props and State? explore ?
+-->props are used to pass data from oe component to another.thestate is local data storage that is local to the component only and cannot be passed to other component.
+this setState property is used to update the state value in the component.
+Explain the useState API?explore?
+-->The useState() is a Hook that allows you to have state variables in functional components . so basically useState is the ability to encapsulate local state in a functional component.

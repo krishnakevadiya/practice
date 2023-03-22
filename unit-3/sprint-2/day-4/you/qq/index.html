@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=\, initial-scale=1.0"> -->
+    <title>Document</title>
+</head>
+<style>
+    .slid{
+        text-align: center;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top:10px;
+}
+.slid>img{
+  width: 90%;
+  border-radius: 20px;
+  height: 420px;
+}
+#container{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows:200 ;
+  gap: 10px;
+  text-align: center;
+}
+body{
+  background-color: black;
+  color: white;
+}
+#disply{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows:200 ;
+  gap: 10px;
+  text-align: center;
+}
+.search{
+display: flex;
+flex-direction: column;
+width: 300px;
+gap: 15px;
+display: none;
+position: absolute;
+background-color: rgb(17, 22, 34);
+min-width: 100px;
+text-align: center;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+background-color: rgb(31, 40, 62);
+}
+.search>div{
+display: flex;
+color: white;
+padding: 5px;
+justify-content: space-between;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border-radius: 10px;
+}
+.search>div>img{
+width: 50%;
+height: 100px;
+}
+.search>div>div{
+    width: 50%;
+}
+.dropdown:hover .search{
+  display: block;
+}
+
+
+
+
+        
+    
+</style>
+<body>
+    <h1>hotstar</h1>
+
+    <form>
+      <input type="text" name="" id="name"  placeholder="enter your name ">
+      <input type="text" name="" id="email" placeholder="enter your email ">
+      <input type="text" name="" id="password" placeholder="enter your password">
+      <input type="text" name="" id="username" placeholder="enter your name ">
+      <input type="text" name="" id="mobile" placeholder="enter your number ">
+      <input type="text" name="" id="description" placeholder="enter your  description">
+    </form>
+    <button onclick="re()">register</button>
+    <form>
+      <input type="text" id="lusername" placeholder="Enter  Your username">
+      <input type="text" id="lpassword" placeholder="Enter  Your password">
+  </form>
+  <button onclick="Login()">Login</button>
+
+    <form>
+      <div class="dropdown">
+       <input class="dropbtn" type="text" placeholder="serch here" id="ms" oninput="debounce(notop,1000)">
+       <div class="search"></div>
+       </div>
+    </form>
+    <button onclick="serchmovie()"><a href="#disply">Sbmit</a> </button>
+    <div class="slid"></div>
+    <button id="lh">Low to heigh</button>
+    <button id="hl">heigh to low</button>
+    <div id="container"><img src="https://www.reactiongifs.us/wp-content/uploads/2015/12/loading_wait_doctor_who.gif"></div>
+    <div id="disply">
+      <img src="https://www.reactiongifs.us/wp-content/uploads/2015/12/loading_wait_doctor_who.gif">
+    </div>
+</body>
+</html>
+<script src="index.js"></script>

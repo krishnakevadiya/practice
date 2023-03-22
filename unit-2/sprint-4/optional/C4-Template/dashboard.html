@@ -1,0 +1,133 @@
+<html>
+
+<head>
+  <title>Web20-C4</title>
+  <style>
+    #navbar{
+        display: flex;
+        border: 0px solid red;
+        margin-bottom: 35px;
+        justify-content: space-around;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        
+      }
+      #navbar>div{
+        display: flex;
+        width: 40%;
+        margin-left:350px;
+        justify-content: space-around;
+      }
+      div+h2{
+        text-align: center;
+        
+      }
+      a{
+        display: flex;
+      }
+      
+      
+      form{
+        margin: auto;
+        margin-top: 5px;
+        width: 17%;
+        padding: 5px;
+        height: 40%;
+        border: 0px solid red;
+        margin-top: 50px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        padding-top: 50px;
+        
+
+      }
+      
+      table td,
+      table th{
+        border: 0px solid red;
+        padding: 8px;
+        text-align: center;
+      }
+      table th{
+        
+        
+        text-align:left;
+        text-align: center;
+      }
+  </style>
+</head>
+
+
+<body>
+  <div id="navbar">
+    <h2>Masai Library</h2>
+    <div>
+      <a href="./index.html">
+        <h2>Home</h2>
+      </a>
+      <a href="./dashboard.html">
+        <h2>Dashboard</h2>
+      </a>
+      <a href="./buy.html">
+        <h2>My Books</h2>
+      </a>
+      <a href="./bookmark.html">
+        <h2>Bookmark</h2>
+      </a>
+    </div>
+  </div>
+  <select id="filter">
+    <option value="">Select Category</option>
+    <option value="Fiction">Fiction</option>
+    <option value="Self Help">Self Help</option>
+    <option value="Finance">Finance</option>
+  </select>
+  <h1>Total Books:- <span id="book-count">0</span></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Added Date</th>
+        <th>Category</th>
+        <th>Buy</th>
+        <th>Bookmark</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Append your data here  -->
+    </tbody>
+  </table>
+</body>
+<script>
+  let dash=JSON.parse(localStorage.getItem("bookList"))||[];
+  console.log(dash);
+  dash.forEach(function(el){
+    let tr=document.createElement("tr")
+    
+    let td1=document.createElement("td")
+    td1.innerText=el.aName;
+    let td2=document.createElement("td")
+    td2.innerText=el.deName;
+    let td3=document.createElement("td")
+    td3.innerText=el.dat;
+    let td4=document.createElement("td")
+    td4.innerText=el.cat;
+    
+    let td5=document.createElement("td")
+    td5.innerText="very good book"
+    let td6=document.createElement("td")
+    td6.innerText="buy"
+    td6.style.backgroundcolor="orange"
+    let td7=document.createElement("td")
+    td7.innerText="add"
+    td7.style.backgroundcolor="red"
+  
+ 
+  tr.append(td1,td2,td3,td4,td5,td6,td7)
+  document.querySelector("tbody").append(tr);
+  localStorage.setItem("buyList",JSON.stringify(bookList))
+})
+</script>
+
+</html>

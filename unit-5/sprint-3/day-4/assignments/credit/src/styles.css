@@ -1,0 +1,12 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.App input{
+padding:10px;
+width:100px;
+font-size: 20px;
+color: rgb(205, 182, 50);
+text-align: center;
+margin:10px;
+}

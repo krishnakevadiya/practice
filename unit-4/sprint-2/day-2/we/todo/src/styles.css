@@ -1,0 +1,54 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+#container{
+  border: 0px solid red;
+  background-color: rgb(206,206,206);
+  flex-direction: column-reverse;
+  width: 40%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+}
+#addtodo>input{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+#addtodo{
+  display: flex;
+  gap: 5px;
+
+}
+#addtodo>button{
+  background-color:white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+
+}
+#todos{
+  display: flex;
+  justify-content: space-between;
+  background-color: gainsboro;
+  padding: 11px;
+  border-radius: 10px;
+  border: none;
+  
+}
+#notcom{
+  border-radius:50%;
+  border: 10px solid rgb(127,123,255);
+  background-color:gray;
+  height: 40px;
+  width:40px;
+
+}
+#com{
+  border-radius:50%;
+  border: 10px solid rgb(135,255,197);
+  background-color:rgb(206,206,206);
+  height: 40px;
+  width:40px;
+}

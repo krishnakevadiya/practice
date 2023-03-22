@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height:300px;
+            width:20%;
+            border:1px solid red;
+            margin:auto;
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+        form{
+            margin-top: 20px;
+        }
+        #box>form>input{
+            width:80%;
+            margin-left:15px;
+            height:30px;
+            border:1px solid rgb(177, 170, 170);
+            margin-top:0px
+        }
+        #box>form>label{
+            margin-left: 15px;
+            font-size: 20px;
+            font-weight: bolder;
+            
+        }
+        input[type="submit"]{
+        width:95%;
+       
+
+       }
+    
+    </style>
+</head>
+<body>
+    <div id="box">
+        <form>
+            <label for="">Card Number</label></br>
+            <input id="card" type="number" placeholder="Enter card number"></br>
+            <label for="">CVV</label></br>
+            <input id="cvv" type="number" placeholder="Enter your cvv"></br>
+            <label for="">Expiry date</label></br>
+            <input id="date" type="date" placeholder="Enter expiry date"></br>
+            <label for="">Name</label></br>
+            <input id="name" type="text" placeholder="Enter your name">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

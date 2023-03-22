@@ -1,0 +1,122 @@
+<html>
+
+<head>
+  <title>Web20-C4</title>
+</head>
+
+<body>
+  <div id="navbar">
+    <h2>Masai Library</h2>
+    <div>
+      <a href="./index.html">
+        <h2>Home</h2>
+      </a>
+      <a href="./dashboard.html">
+        <h2>Dashboard</h2>
+      </a>
+      <a href="./buy.html">
+        <h2>My Books</h2>
+      </a>
+      <a href="./bookmark.html">
+        <h2>Bookmark</h2>
+      </a>
+    </div>
+  </div>
+  <select id="filter">
+    <option value="">Select Category</option>
+    <option value="Fiction">Fiction</option>
+    <option value="Self Help">Self Help</option>
+    <option value="Finance">Finance</option>
+  </select>
+  <h1>Total Books:- <span id="book-count">0</span></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Added Date</th>
+        <th>Category</th>
+        <th>Buy</th>
+        <th>Bookmark</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Append your data here  -->
+    </tbody>
+  </table>
+</body>
+
+</html>
+<script>
+  let booklist = JSON.parse(localStorage.getItem("book-list"))
+  let count = document.getElementById("book-count").innerText = booklist.length || 0;
+
+  function Displaytable(data) {
+    let tbody = document.querySelector("tbody");
+    tbody.innerHTML = null;
+    data.forEach(function (elem, i) {
+      let row = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.innerText = elem.name;
+      let td2 = document.createElement("td");
+      td2.innerText = elem.author;
+      let td3 = document.createElement("td");
+      td3.innerText = elem.description;
+      let td4 = document.createElement("td");
+      td4.innerText = elem.date;
+      let td5 = document.createElement("td");
+      td5.innerText = elem.category;
+      let td6 = document.createElement("td");
+      td6.innerText = "Buy"
+      td6.addEventListener("click", function () {
+        count--
+        addtoLS("buy-list", elem);
+        delfun(booklist, i);
+        Displaytable(booklist);
+        document.getElementById("book-count").innerText = count;
+      })
+      let td7 = document.createElement("td");
+      td7.innerText = "Add"
+      td7.addEventListener("click", function () {
+        count--
+        addtoLS("bookmark-list", elem);
+        delfun(booklist);
+        Displaytable(booklist);
+        document.getElementById("book-count").innerText = count;
+
+      })
+      let td8 = document.createElement("td");
+      td8.innerText = elem.price;
+      tbody.append(row);
+      row.append(td1, td2, td3, td4, td5, td6, td7, td8);
+
+    })
+
+
+  }
+  Displaytable(booklist);
+  function addtoLS(key, value) {
+    newLSdata = JSON.parse(localStorage.getItem(key)) || [];
+    newLSdata.push(value);
+    localStorage.setItem(key, JSON.stringify(newLSdata))
+  }
+  function delfun(data, i) {
+    booklist.splice(i, 1);
+    localStorage.setItem("book-list", JSON.stringify(booklist));
+
+  }
+  let filter = document.getElementById("filter");
+  filter.addEventListener("change", function () {
+    if (filter.value == "") {
+      Displaytable(booklist);
+    } else {
+      let filteredData = booklist.filter(function (elem) {
+        return elem.category === filter.value;
+
+      })
+      Displaytable(filteredData);
+    }
+  })
+</script>

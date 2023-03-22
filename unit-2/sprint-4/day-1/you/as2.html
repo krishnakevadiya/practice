@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="shownami()">Store name to Ls</button>
+    <button onclick="showname()">get name to Ls</button>
+    <button onclick="stornum()">Store name to Ls</button>
+    <button onclick="gento()">get mobile number to Ls</button>
+    <button onclick="storehobby()">Store hobby to Ls</button>
+    <button onclick="gethobby()">grt hobby to Ls</button>
+    
+</body>
+</html>
+<script>
+  function shownami(){
+    localStorage.setItem("username","Masai School")
+  }
+  function showname(){
+    let name=document.createElement("h1");
+    name.innerText=localStorage.getItem("username")
+    document.querySelector("body").append(name)
+  }
+   
+  function stornum(){
+    localStorage.setItem("mobile",89898989898989)
+  }
+  function gento(){
+    let k=document.createElement("h1");
+    k.innerText=localStorage.getItem("mobile");
+    document.querySelector("body").append(k)
+  }
+  function storehobby(){
+    let hobby=["reading","music"];
+    localStorage.setItem("myhobbies",JSON.stringify(hobby))
+  }
+  function gethobby(){
+    let mer=JSON.parse(localStorage.getItem("myhobbies"))
+    for(let i=0;i<2;i++){
+        console.log(mer[i])
+    }
+  }
+
+</script>

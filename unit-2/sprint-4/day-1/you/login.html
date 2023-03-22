@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        img{
+            height:50px;
+            width:200px;
+            display:block;
+            margin:auto;
+            margin-top:40px
+        }
+       #box{
+        height:600px;
+        width:35%;
+        border:0px solid red;
+        margin:auto;
+        margin-top:40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        border-radius: 10px;
+       }
+       form{
+        margin-left:30px;
+        margin-top:30px;
+       }
+       form>input{
+        height:40px;
+        width:90%;
+        margin:auto;
+        margin-top:20px;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        border:1px solid rgb(204, 197, 197);
+        
+       }
+       form>label{
+        padding-bottom:10px;
+        color:rgb(34, 30, 30);
+        font-size:18px
+       }
+       input[type="submit"]{
+        width:91%;
+        color:rgb(148, 138, 138);
+        border:none;
+       }
+       p{
+        color:grey;
+        
+       }
+       #box>h2{
+        text-align: center;
+        font-weight: bold;
+        padding-top: 15px;
+       }
+       form+p{
+        text-align: center;
+       }
+      a{
+        font-weight: lighter;
+        color:rgb(22, 122, 216)
+      }
+      div+p{
+        font-size:20px;
+        text-align: center;
+      }
+      
+    </style>
+</head>
+<body>
+    <img src="https://sso.masaischool.com/brand_dark.svg"/>
+   <div id="box">
+    <h2>Sign in</h2>
+       <form>
+       
+        <label for="">Email</label></br>
+        <input id="email" type="email" placeholder="Enter email"></br>
+        <label for="">Password</label></br>
+        <input id="password" type="password" placeholder="Enter password">
+        <p>By signing up, I accept the Masai School <a href="https://masaischool.com/terms/" target="_blank">Terms of Services</a> and acknowledge the <a href="https://masaischool.com/privacy/" target="_blank">Privacy Policy</a>.</p>
+        <input type="submit">
+       </form>
+      
+    </div>
+    <p>©p 2022 by Masai School
+        Privacy Policy & Terms and Conditions</p>
+   
+</body>
+</html>
+<script>
+   document.querySelector("form").addEventListener("submit",check);
+   function check(event){
+    event.preventDefault();
+    let email =document.querySelector("#email").value;
+    let password =document.querySelector("#password").value;
+    let userdata=JSON.parse(localStorage.getItem("datalist"));
+    
+    if(userdata.Email==email&&userdata.Password==password){
+      alert("login successful")
+    
+
+    }else{
+      alert("details not match")
+    }
+
+   
+    
+  
+
+    
+      
+  
+
+   }
+   
+    
+</script>

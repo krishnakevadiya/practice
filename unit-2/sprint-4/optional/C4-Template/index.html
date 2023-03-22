@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <title>Web20-C4</title>
+    <style>
+      #navbar{
+        display: flex;
+        border: 0px solid red;
+        margin-bottom: 35px;
+        justify-content: space-around;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        
+      }
+      #navbar>div{
+        display: flex;
+        width: 40%;
+        margin-left:350px;
+        justify-content: space-around;
+      }
+      div+h2{
+        text-align: center;
+        
+      }
+      
+      #create>h1{
+        text-align: center;
+      }
+      #create>h1{
+        margin: auto;
+        margin-top: 5px;
+        width: 30%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        padding: 5px;
+      }
+      
+      
+      form{
+        margin: auto;
+        margin-top: 5px;
+        width: 17%;
+        padding: 5px;
+        height: 40%;
+        border: 0px solid red;
+        margin-top: 50px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        padding-top: 50px;
+        
+
+      }
+     
+      
+      table{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 80%;
+        margin: auto;
+        margin-top: 20%;
+        text-align: center;
+        border-collapse: collapse;
+      }
+      table td,
+      table th{
+        border: 0px solid red;
+        padding: 8px;
+        text-align: center;
+      }
+      table th{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align:left;
+        text-align: center;
+      }
+      textarea{
+        width: 90%;
+        padding: 5px;
+        border: 1px solid white;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 10px;
+        resize: vertical;
+        margin-left: 20px;
+      }
+      
+
+
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h2>Masai Library</h2>
+      <div>
+        <a href="./index.html">
+          <h2>Home</h2>
+        </a>
+        <a href="./dashboard.html">
+          <h2>Dashboard</h2>
+        </a>
+        <a href="./buy.html">
+          <h2>My Books</h2>
+        </a>
+        <a href="./bookmark.html">
+          <h2>Bookmark</h2>
+        </a>
+      </div>
+    </div>
+    <div id="create">
+      <h1>Library Management System</h1>
+      <form>
+        <input id="name" placeholder="Book Name" type="text" />
+        <input id="author" placeholder="Author Name" type="text" />
+        <input id="desc" placeholder="Book Description" type="text" />
+        <label for="">Adding Date:-</label>
+        <input type="date" id="added"/>
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Self Help">Self Help</option>
+          <option value="Finance">Finance</option>
+        </select>
+        <input id="price" placeholder="Book's Price" type="number" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script>
+     document.querySelector("form").addEventListener("submit",apply)
+     let k=JSON.parse(localStorage.getItem("bookList"))||[]
+     function apply(){
+      event.preventDefault();
+      let perName=document.querySelector("#name").value;
+      let aName=document.querySelector("#author").value;
+      let deName=document.querySelector("#desc").value;
+      let dat=document.querySelector("#date").value;
+      let cat=document.querySelector("#category").value;
+      
+
+     
+     let Lobj={
+      perName,
+      aName,
+      deName,
+      dat,
+      cat,
+     };
+     k.push(Lobj);
+     localStorage.setItem("bookList",JSON.stringify(k))
+     } 
+
+
+  </script>
+</html>

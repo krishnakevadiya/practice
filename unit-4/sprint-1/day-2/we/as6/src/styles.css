@@ -1,0 +1,28 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+#maincon{
+  display: flex;
+  justify-content: space-between;
+  padding: 48px;
+  background-color: aliceblue;
+
+}
+#maincon>div>div{
+ 
+  padding: 10px;
+   gap:40px;
+
+}
+#maincon>div>div>button{
+  background-color: black;
+  color: white;
+
+}
+#maincon>img{
+  border-radius: 50%;
+  width: 20%;
+}
+
+

@@ -1,0 +1,80 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "asdasdcvvbfg",
+      "author": "typicode",
+      "status": true
+    },
+    {
+      "id": "1666196145107.3188fgjfgjf",
+      "title": "kasakay",
+      "status": false
+    },
+    {
+      "id": "1666196147555.545fjfjfj",
+      "title": "fjfjfj",
+      "status": true
+    },
+    {
+      "id": "1666196193880.337xcbxcbxc",
+      "title": "xcbxcbxc",
+      "status": false
+    },
+    {
+      "id": "1666196576168.9304asfasfd",
+      "title": "asfasfd",
+      "status": false
+    },
+    {
+      "id": "1666197428886.277sfasdfasdf",
+      "title": "sfasdfasdf",
+      "status": false
+    },
+    {
+      "id": "1666197433177.9214sfsdfasd",
+      "title": "sfsdfasd",
+      "status": false
+    },
+    {
+      "id": "1666197434642.6484safasdfa",
+      "title": "safasdfa",
+      "status": true
+    },
+    {
+      "id": "1666197436316.0566asfasfs",
+      "title": "asfasfs",
+      "status": false
+    },
+    {
+      "id": "1666199365656.4275dafqsa",
+      "title": "dafqsa",
+      "status": false
+    },
+    {
+      "id": "1666199367358.0134asfasfas",
+      "title": "asfasfas",
+      "status": false
+    },
+    {
+      "id": "1666199371408.293fasfasf",
+      "title": "fasfasf",
+      "status": false
+    },
+    {
+      "id": "1666199372990.1501asfasfasf",
+      "title": "asfasfasf",
+      "status": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

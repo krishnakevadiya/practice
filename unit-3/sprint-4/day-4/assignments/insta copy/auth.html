@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="opensinin()">Login</button>
+  <div class="popupsingin">
+    <p class="closesinin" onclick="closesinin()">&#10005</p>
+    <form>
+      <input type="text" id="lusername" placeholder="Enter  Your username">
+      <input type="text" id="lpassword" placeholder="Enter  Your password">
+  </form>
+  <button onclick="Login()">Login</button>
+    <button onclick="opensingup()">Create New Account</button>
+</div>
+<div class="popupsingup">
+    <p class="closesinup" onclick="closesignup()">&#10005</p>
+    <form>
+      <input type="text" id="name" placeholder="Enter  Your Name">
+      <input type="email" id="email" placeholder="Enter  Your email">
+      <input type="text" id="password" placeholder="Enter  Your password">
+      <input type="text" id="username" placeholder="Enter  Your username">
+      <input type="number" id="mobile" placeholder="Enter  Your mobile">
+      <input type="text" id="description" placeholder="Enter  Your description">
+  </form>
+  <button onclick="Register()">Register</button>
+</div>
+</body>
+</html>
+<script src="./auth.js"></script>

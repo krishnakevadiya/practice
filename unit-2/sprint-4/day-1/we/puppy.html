@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div{
+            display: flex;
+            margin-right: 20px;
+        }
+        body>div>p{
+            margin-right: 10px;
+        }
+        p{
+            font-size: 30px;
+            
+        
+        }
+        button{
+            font-size: 50px;
+            border-radius: 10px;
+            background-color: rgb(15, 187, 67);
+        }
+        
+    </style>
+</head>
+<body>
+    <img src="https://static8.depositphotos.com/1003131/1021/i/450/depositphotos_10214337-stock-photo-yellow-lab-puppy-in-the.jpg"/>
+    <div>
+        <p>like :<span id="like"></span></p>
+        <p>dilike :<span id="dislike"></span></p>
+    </div>
+    <button onclick="likeFun()">like</button>
+    <button onclick="dislikeFun()">dislike</button>
+    
+</body>
+</html>
+<script>
+    let like_count=localStorage.getItem("like_img")
+    document.querySelector("#like").innerText=like_count;
+    let dislike_count=localStorage.getItem("dislike_img")
+    document.querySelector("#dislike").innerText=dislike_count;
+
+
+    function likeFun(){
+       like_count++;
+       document.querySelector("#like").innerText=like_count;
+       localStorage.setItem("like_img",like_count)
+    }
+
+    function dislikeFun(){
+        dislike_count++;
+        document.querySelector("#dislike").innerText=dislike_count;
+        localStorage.setItem("dislike_img",dislike_count)
+
+    }
+
+
+</script>

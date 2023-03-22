@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>admin panel</h1>
+    <form onsubmit="storedata(event)">
+        <input type="text" name="name" id="name" placeholder="enter product name">
+        <input type="text" name="category" id="category" placeholder="enter product category">
+        <input type="text" name="image" id="image" placeholder="enter product image url">
+        <input type="number" name="price" id="price" placeholder="enter product price">
+        <select name="gender" id="gender">
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+        <input type="text" name="sold" id="sold" value="false">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
+<script>
+    function product(n,c,i,p,g,s){
+    this.name = n;
+    this.category = c;
+    this.image = i;
+    this.price = p;
+    this.gender = g;
+    this.sold = s;
+}
+
+
+
+function storedata(e){
+    e.preventDefault();
+    let form = document.querySelector("form");
+    let name = form.name.value;
+    let category = form.category.value;
+    let image = form.image.value;
+    let price = form.price.value;
+    let gender = form.gender.value;
+    let sold = form.sold.value;
+    let s1 = new product(name,category,image,price,gender,sold);
+    let dataop = JSON.parse(localStorage.getItem("Products")) || [];
+    dataop.push(s1);
+    localStorage.setItem("Products",JSON.stringify(dataop));
+}
+</script>

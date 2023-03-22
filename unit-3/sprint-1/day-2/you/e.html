@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        .container>div{
+           display: flex;
+           gap: 100px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .container>div>img{
+            width: 80px;
+        }
+        .opop{
+            display: flex;
+            gap: 100px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Products</h1>
+    <div style="text-align: center;">Counter<div id="counter" ></div></div>
+    <div class="opop">
+        <p>name</p>
+        <p>category</p>
+        <p>image</p>
+        <p>price</p>
+        <p>gender</p>
+        <p>sold</p>
+        <p>remove</p>
+
+    </div>
+    <div class="container"></div>
+</body>
+</html>
+<script>
+    let count=0;
+    function append(){
+        let data=JSON.parse(localStorage.getItem("Products"));
+        let container=document.querySelector(".container");
+        container.innerHTML=null;
+        count=data.length;
+        document.getElementById("counter").innerText=count;
+        data.forEach(function (el,index){
+            let div=document.createElement("div");
+            let name=document.createElement("p");
+            name.innerText=el.name;
+            let category=document.createElement("p");
+            category.innerText=el.category;
+            let image=document.createElement("img");
+            image.src=el.image;
+            let price=document.createElement("p");
+            price.innerText=el.price;
+            let gender=document.createElement("p");
+            gender.innerText=el.gender;
+            let sold=document.createElement("p");
+            sold.innerText=el.sold;
+            sold.style.cursor="pointer";
+            if(sold.innerText=="true"){
+                sold.style.color="red";
+            }else{
+                sold.style.color="green"
+            }
+            sold.addEventListener("click",function(){
+                if(sold.innerText=="true"){
+                    sold.innerText="false";
+                    sold.style.color="green";
+                }
+            });
+            let btn=document.createElement("button");
+            btn.innerText="remove";
+
+            btn.addEventListener("click",function(){
+                remove(index);
+            });
+
+            div.append(name,category,image,price,gender,sold,btn);
+            container.append(div);
+        })
+    }
+    function remove(index){
+        let data=JSON.parse(localStorage.getItem("Products"));
+        let ndata = data.filter(function (el,i){
+            if(i==index){
+                let tr= JSON.parse(localStorage.getItem("trash")) || [];
+                tr.push(el);
+                localStorage.setItem("trash",JSON.stringify(tr));
+            }else{
+                return i !== index;
+            }
+        })
+        localStorage.setItem("Products",JSON.stringify(ndata));
+        append();
+    }
+    append();
+</script>

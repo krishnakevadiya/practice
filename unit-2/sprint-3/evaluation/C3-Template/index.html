@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard</title>
+    
+    <style>
+      /* Write all necessery styles here  */
+      #create{
+        height: 500px;
+        width: 40%;
+        color: black;
+        padding: 20px 0px 30px 30px;
+        font-weight: bold;
+        margin: auto;
+        border: 0px solid blue;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      }
+      #create>h1{
+        text-align: center;
+        padding-right: 10px;
+
+      }
+      #create>form>input{
+        width: 90%;
+        height: 42px;
+        margin-top: 14px;
+      }
+      #create>form>select{
+        width: 93%;
+        height: 50px;
+        margin-top: 15px;
+      }
+      table{
+        width: 80%;
+        margin: auto;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border:separate;
+        background-color: yellow;
+        margin-top: 50px;
+        cursor: pointer;
+      }
+      table td,
+      table th{
+        border: 2px solid wheat;
+        padding: 8px;
+        text-align: center;
+      }
+      div+h1{
+        text-align: center;
+
+      }
+      div+h1+h1{
+        text-align: center;
+      }
+
+
+
+
+
+
+
+       
+
+    </style>
+  </head>
+  <body>
+    <div id="create">
+      <h1>Hire a new Employee</h1>
+      <form>
+        <input placeholder="Employee Name" id="name" type="text" />
+        <select id="job">
+          <option value="">Select Job Role</option>
+          <option value="SDE-1">SDE-1</option>
+          <option value="SDE-2">SDE-2</option>
+          <option value="HR Manager">HR Manager</option>
+          <option value="SEO Specialist">SEO Specialist</option>
+          <option value="CA">CA</option>
+        </select>
+        <select id="department">
+          <option value="">Select Department</option>
+          <option value="Engineering">Engineering</option>
+          <option value="HR">HR</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Finance">Finance</option>
+        </select>
+        <input type="number" id="salary" placeholder="Monthly salary" />
+        <input
+          type="number"
+          id="experience"
+          placeholder="Prev Work Experience in Years"
+        />
+        <input placeholder="Contact Email" id="email" type="email" />
+        <input type="submit" value="Hire" />
+      </form>
+    </div>
+    <h1>Total Active Employee:- <span id="total-employee">0</span></h1>
+    <h1>Total Cost in Salary:- <span id="total-salary">0</span></h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Job Role</th>
+          <th>Department</th>
+          <th>salary</th>
+          <th>Contact Email</th>
+          <th>Work Experience</th>
+          <th>Role Type</th>
+          <th>Fire Employee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append all the rows here  -->
+      </tbody>
+    </table>
+  </body>
+  <script>
+    // write all your necessery scripts here 
+        document.querySelector("form").addEventListener("submit",myFun);
+        let count=0;
+        let bag=0
+        function myFun(event){
+              event.preventDefault();
+      
+              
+              let name=document.querySelector("#name").value;
+              let job=document.querySelector("#job").value;
+              let dep=document.querySelector("#department").value;
+              let sal=document.querySelector("#salary").value;
+              let exp=document.querySelector("#experience").value;
+              let mail=document.querySelector("#email").value;
+              
+
+              let row=document.createElement("tr");
+              let col1=document.createElement("td");
+              col1.innerText=name;
+              let col2=document.createElement("td");
+              col2.innerText=job;
+              let col3=document.createElement("td");
+              col3.innerText=dep;
+              let col4=document.createElement("td");
+              col4.innerText=sal;
+              let col5=document.createElement("td");
+              col5.innerText=exp;
+              let col6=document.createElement("td");
+              col6.innerText=mail;
+              let col7=document.createElement("td");
+              let bag="";
+              if(exp>5){
+                col7.innerText="Senior";
+              }else{
+      
+                col7.innerText="Junior";
+              }
+
+              let col8=document.createElement("td");
+
+              col8.innerText="Delete";
+              col8.style.backgroundColor="red";
+              col8.style.cursor="pointer"
+              col8.addEventListener("click",remove);
+
+              row.append(col1,col2,col3,col4,col5,col6,col7,col8)
+              document.querySelector("tbody").append(row);
+              count++;
+              document.querySelector("#total-employee").innerText=count;
+              bag=bag+(bag+sal)
+              document.querySelector("#total-salary").innerText= +bag;
+            
+            
+        }
+        function remove(event){
+          event.target.parentNode.remove();
+          count--;
+          document.querySelector("#total-employee").innerText=count;
+        
+        }
+  </script>
+</html>

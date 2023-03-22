@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+   <input id="1st"type="number" placeholder="enter 1st Number">
+   <input id="2nd"type="number" placeholder="enter 2nd number">
+   <div>
+     <button onClick="add()">Add</button>
+     <button onClick="sub()">Subtract</button>
+     <button onClick="multi()">Multiply</button>
+     <button onClick="div">Divide</button>
+   </div> 
+</body>
+</html>
+<script>
+    function multi(){
+        let out=document.getElementById("1st").value;
+        let out1=document.getElementById("2nd").value;
+        alert(out*out1)
+    }
+    function add(){
+        let out=document.getElementById("1st").value;
+        let out1=document.getElementById("2nd").value;
+        alert(Number(out)+Number(out1))
+    }
+    function sub(){
+        let out=document.getElementById("1st").value;
+        let out1=document.getElementById("2nd").value;
+        alert(out-out1)
+    }
+    function div(){
+        let out=document.getElementById("1st").value;
+        let out1=document.getElementById("2nd").value;
+        alert(out/out1)
+    }
+       
+</script>

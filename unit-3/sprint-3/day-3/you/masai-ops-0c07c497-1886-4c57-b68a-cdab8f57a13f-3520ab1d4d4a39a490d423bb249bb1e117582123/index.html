@@ -1,0 +1,45 @@
+const getCategoriesData = async () => {
+    // code here
+    try{
+      let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`);
+      res= await res.json();
+      return res;
+    }catch(err){
+      return "something went wrong";
+  }
+  };
+  
+  const getIngredientData = async () => {
+    // code here
+    try{
+      let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast`);
+      res= await res.json();
+      // console.log(res);
+      return res;
+  }catch(err){
+      return "something went wrong";
+  }
+  };
+  
+  window.onload = function () {
+    //  get the buttons here and add click event
+    document.getElementById("get-category-data").addEventListener("click",getCategoriesData);
+    document.getElementById("get-ingredient-data").addEventListener…
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Food App</title>
+  </head>
+  <body>
+      <section class="container">
+  <!-- add buttons here -->
+          <button id="get-category-data" >Get Category Data</button>
+          <button id="get-ingredient-data">Get Ingredient Data</button>
+      </section>
+      <script src="./src/foodApp.js" ></script>
+  </body>
+  </html>
+  
